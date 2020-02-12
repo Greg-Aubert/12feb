@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <title>The Gossip Project</title>
+  </head>
+
+  <body>
+    <div class="jumbotron">
+      <h1 class="display-4">Vous voulez créer un potin ? Super !</h1>
+    </div>
+
+    <div class= 'container text-center'>
+        <%= form_tag(gossips_path, method: "post") do%>
+        <%= label_tag 'Titre' %>
+        <%= text_field_tag :title, @gossip.title %>
+        <br />
+        <%= label_tag 'User-id(1..10)' %>
+        <%= text_field_tag :user, @gossip.user%>
+        <br /> 
+        <%= label_tag 'Contenu' %>
+        <%= text_field_tag :content, @gossip.content %>
+        <br />       
+        <%= submit_tag 'Add Gossip' %>
+        <% end %>
+    </div>
+  </body>
+</html>
+
+  
